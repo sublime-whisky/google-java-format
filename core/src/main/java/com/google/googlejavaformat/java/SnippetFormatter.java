@@ -59,7 +59,7 @@ public class SnippetFormatter {
     }
   }
 
-  private static final int INDENTATION_SIZE = 2;
+  private static final int INDENTATION_SIZE = 1;
   private final Formatter formatter = new Formatter();
   private static final CharMatcher NOT_WHITESPACE = CharMatcher.whitespace().negate();
 
@@ -71,7 +71,7 @@ public class SnippetFormatter {
     int spaces = indentationLevel * INDENTATION_SIZE;
     StringBuilder buf = new StringBuilder(spaces);
     for (int i = 0; i < spaces; i++) {
-      buf.append(' ');
+      buf.append('\t');
     }
     return buf.toString();
   }
