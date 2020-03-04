@@ -1019,19 +1019,19 @@ public final class JavadocFormattingTest {
     };
     String[] expected = {
       "class Test {",
-      "  /**",
-      "   * hello",
-      "   *",
-      "   * <p>world",
-      "   */",
-      "  void f() {}",
+      "	/**",
+      "	 * hello",
+      "	 *",
+      "	 * <p>world",
+      "	 */",
+      "	void f() {}",
       "",
-      "  /**",
-      "   * hello",
-      "   *",
-      "   * <p>world",
-      "   */",
-      "  void f() {}",
+      "	/**",
+      "	 * hello",
+      "	 *",
+      "	 * <p>world",
+      "	 */",
+      "	void f() {}",
       "}",
     };
     doFormatTest(input, expected);
@@ -1050,12 +1050,12 @@ public final class JavadocFormattingTest {
     };
     String[] expected = {
       "class Test {",
-      "  /**",
-      "   * hello",
-      "   *",
-      "   * <p>world",
-      "   */",
-      "  void f() {}",
+      "	/**",
+      "	 * hello",
+      "	 *",
+      "	 * <p>world",
+      "	 */",
+      "	void f() {}",
       "}",
     };
     doFormatTest(input, expected);
@@ -1407,10 +1407,10 @@ public final class JavadocFormattingTest {
     };
     String[] expected = {
       "public class Foo {",
-      "  /**",
-      "   * \u2028 Set and enable something.",
-      "   */",
-      "  public void setSomething() {}",
+      "	/**",
+      "	 * \u2028 Set and enable something.",
+      "	 */",
+      "	public void setSomething() {}",
       "}",
     };
     doFormatTest(input, expected);
