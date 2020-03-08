@@ -134,10 +134,10 @@ public class MainTest {
           + " eiusmod tempor incididunt ut labore et dolore magna aliqua",
       " */",
       "class Test {",
-      "  /**",
+      "	/**",
       "   * creates entropy",
       "   */",
-      "  public static void main(String... args) {}",
+      "	public static void main(String... args) {}",
       "}",
     };
     String[] expected = {
@@ -151,8 +151,8 @@ public class MainTest {
       " *     incididunt ut labore et dolore magna aliqua",
       " */",
       "class Test {",
-      "  /** creates entropy */",
-      "  public static void main(String... args) {}",
+      "	/** creates entropy */",
+      "	public static void main(String... args) {}",
       "}",
       "",
     };
@@ -175,10 +175,10 @@ public class MainTest {
       "import java.util.List;",
       "import java.util.ArrayList;",
       "class Test {",
-      "  /**",
+      "	/**",
       "   * May be an {@link ArrayList}.",
       "   */",
-      "  public static List<String> names;",
+      "	public static List<String> names;",
       "}",
     };
     String[] expected = {
@@ -186,10 +186,10 @@ public class MainTest {
       "import java.util.List;",
       "",
       "class Test {",
-      "  /**",
+      "	/**",
       "   * May be an {@link ArrayList}.",
       "   */",
-      "  public static List<String> names;",
+      "	public static List<String> names;",
       "}",
     };
     InputStream in = new ByteArrayInputStream(joiner.join(input).getBytes(UTF_8));
@@ -259,7 +259,7 @@ public class MainTest {
       "import java.util.ArrayList;",
       "",
       "class Test {",
-      "  ArrayList<String> a = new ArrayList<>();",
+      "	ArrayList<String> a = new ArrayList<>();",
       "ArrayList<String> b = new ArrayList<>();",
       "}",
     };
@@ -515,16 +515,15 @@ public class MainTest {
   public void reflowLongStrings() throws Exception {
     String[] input = {
       "class T {", //
-      "  String s = \"one long incredibly unbroken sentence moving from topic to topic so that no"
+      "	String s = \"one long incredibly unbroken sentence moving from topic to topic so that no"
           + " one had a chance to interrupt\";",
       "}"
     };
     String[] expected = {
       "class T {",
-      "  String s =",
-      "      \"one long incredibly unbroken sentence moving from topic to topic so that no one had"
-          + " a\"",
-      "          + \" chance to interrupt\";",
+      "\tString s =",
+      "\t\t\"one long incredibly unbroken sentence moving from topic to topic so that no one had a chance to\"",
+      "\t\t\t+ \" interrupt\";",
       "}",
       "",
     };
@@ -543,14 +542,14 @@ public class MainTest {
   public void noReflowLongStrings() throws Exception {
     String[] input = {
       "class T {", //
-      "  String s = \"one long incredibly unbroken sentence moving from topic to topic so that no"
+      "	String s = \"one long incredibly unbroken sentence moving from topic to topic so that no"
           + " one had a chance to interrupt\";",
       "}"
     };
     String[] expected = {
       "class T {",
-      "  String s =",
-      "      \"one long incredibly unbroken sentence moving from topic to topic so that no one had"
+      "	String s =",
+      "		\"one long incredibly unbroken sentence moving from topic to topic so that no one had"
           + " a chance to interrupt\";",
       "}",
       "",
@@ -578,10 +577,10 @@ public class MainTest {
           + " eiusmod tempor incididunt ut labore et dolore magna aliqua",
       " */",
       "class Test {",
-      "  /**",
-      "   * creates entropy",
-      "   */",
-      "  public static void main(String... args) {}",
+      "\t/**",
+      "\t * creates entropy",
+      "\t */",
+      "	public static void main(String... args) {}",
       "}",
       "",
     };

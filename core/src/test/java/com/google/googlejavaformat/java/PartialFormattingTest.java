@@ -856,8 +856,8 @@ public final class PartialFormattingTest {
         lines(
             "public class MyTest {",
             "	/* This is a",
-            " poorly indented",
-            " 					 comment*/",
+            "	poorly indented",
+            "						 comment*/",
             "	int x;",
             "}",
             "",

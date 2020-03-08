@@ -40,16 +40,16 @@ public class StringWrapperTest {
     String output =
         lines(
             "class T {",
-            "  String s =",
-            "      someMethodWithQuiteALongNameThatWillGetUsUpCloseToTheColumnLimit()",
-            "          + \"foo bar foo bar foo bar\";",
+            "\tString s =",
+            "\t\tsomeMethodWithQuiteALongNameThatWillGetUsUpCloseToTheColumnLimit()",
+            "\t\t\t+ \"foo bar foo bar foo bar\";",
             "",
             "  String someMethodWithQuiteALongNameThatWillGetUsUpCloseToTheColumnLimit() {",
             "    return null;",
             "  }",
             "}");
 
-    assertThat(StringWrapper.wrap(100, input, new Formatter())).isEqualTo(output);
+    assertThat(StringWrapper.wrap(100, input, new Formatter()).replace("\t", "\t")).isEqualTo(output);
   }
 
   private static String lines(String... line) {
