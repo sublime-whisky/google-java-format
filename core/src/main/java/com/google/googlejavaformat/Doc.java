@@ -524,7 +524,7 @@ public abstract class Doc {
 
     @Override
     float computeWidth() {
-      return 1.0F;
+      return 8.0F;
     }
 
     @Override

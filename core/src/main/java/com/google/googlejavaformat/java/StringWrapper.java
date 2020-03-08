@@ -153,7 +153,9 @@ public final class StringWrapper {
       // to be wrapped.
       List<Tree> flat = flatten(input, unit, path, enclosing, first);
       // Zero-indexed start column
+      // int startColumn = lineMap.getColumnNumber(getStartPosition(flat.get(0))) - 1;
       int startColumn = lineMap.getColumnNumber(getStartPosition(flat.get(0))) - 1;
+      startColumn /= 8;
 
       // Handling leaving trailing non-string tokens at the end of the literal,
       // e.g. the trailing `);` in `foo("...");`.
@@ -284,9 +286,15 @@ public final class StringWrapper {
     return lines.stream()
         .collect(
             joining(
-                "\"" + separator + Strings.repeat(" ", startColumn + (first0 ? 4 : -2)) + "+ \"",
+                "\"" + separator + Strings.repeat("\t", startColumn + (first0 ? 1 : 0)) + "+ \"",
                 "\"",
                 "\""));
+    // return lines.stream()
+    //     .collect(
+    //         joining(
+    //             "\"" + separator + Strings.repeat("\t", startColumn + (first0 ? 1 : -1)) + "+ \"",
+    //             "\"",
+    //             "\""));
   }
 
   /**
