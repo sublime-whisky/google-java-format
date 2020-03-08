@@ -38,7 +38,7 @@ public final class JavaCommentsHelper implements CommentsHelper {
   }
 
   @Override
-  public String rewrite(Tok tok, int maxWidth, int column0) {
+  public String rewrite(Tok tok, int maxWidth, int column0, int indent) {
     if (!tok.isComment()) {
       return tok.getOriginalText();
     }
@@ -52,7 +52,7 @@ public final class JavaCommentsHelper implements CommentsHelper {
       lines.add(CharMatcher.whitespace().trimTrailingFrom(it.next()));
     }
     if (tok.isSlashSlashComment()) {
-      return indentLineComments(lines, column0);
+      return indentLineComments(lines, column0, indent);
     } else if (javadocShaped(lines)) {
       return indentJavadoc(lines, column0);
     } else {
@@ -91,11 +91,11 @@ public final class JavaCommentsHelper implements CommentsHelper {
   }
 
   // Wraps and re-indents line comments.
-  private String indentLineComments(List<String> lines, int column0) {
+  private String indentLineComments(List<String> lines, int column0, int indent) {
     lines = wrapLineComments(lines, column0);
     StringBuilder builder = new StringBuilder();
     builder.append(lines.get(0).trim());
-    String indentString = Strings.repeat("\t", column0);
+    String indentString = Strings.repeat("\t", indent) + Strings.repeat(" ", column0 - indent);
     for (int i = 1; i < lines.size(); ++i) {
       builder.append(lineSeparator).append(indentString).append(lines.get(i).trim());
     }
