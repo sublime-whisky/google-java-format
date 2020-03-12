@@ -95,7 +95,7 @@ public class FormattingFilerTest {
                     "package foo;",
                     "",
                     "class Bar {",
-                    "  private String baz;",
+                    "\tprivate String baz;",
                     "}",
                     "")); // trailing newline
   }
