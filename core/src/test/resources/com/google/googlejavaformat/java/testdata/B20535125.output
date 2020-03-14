@@ -1,161 +1,162 @@
 package com.google.googlejavaformat.java.test;
 
 class Test {
-  void m() {
-    if (!metadata.ignoreOutputTransformations() && Producers.isListenableFutureMapKey(outputKey)) {
-      ImmutableList<ProducerNode<?>> nodes = createMapNodes((ProducerNode) node);
-      checkCollectionNodesAgainstWhitelist(nodes, whitelist);
-      return nodes;
+	void m() {
+		if (!metadata.ignoreOutputTransformations()
+			&& Producers.isListenableFutureMapKey(outputKey)) {
+			ImmutableList<ProducerNode<?>> nodes = createMapNodes((ProducerNode) node);
+			checkCollectionNodesAgainstWhitelist(nodes, whitelist);
+			return nodes;
 
-    } else if (!metadata.ignoreOutputTransformations()
-        && Producers.isListenableFutureListKey(outputKey)) {
-      ImmutableList<ProducerNode<?>> nodes = createListNodes((ProducerNode) node);
-      return nodes;
-    }
+		} else if (!metadata.ignoreOutputTransformations()
+			&& Producers.isListenableFutureListKey(outputKey)) {
+			ImmutableList<ProducerNode<?>> nodes = createListNodes((ProducerNode) node);
+			return nodes;
+		}
 
-    Set<Short> shorts = new HashSet<>();
-    for (short i = 0; i < 99; ++i) {
+		Set<Short> shorts = new HashSet<>();
+		for (short i = 0; i < 99; ++i) {
 
-      shorts.add(i);
-      shorts.remove(i - 1);
-    }
+			shorts.add(i);
+			shorts.remove(i - 1);
+		}
 
-    short i = 0;
-    do {
+		short i = 0;
+		do {
 
-      shorts.add(i);
-      shorts.remove(i - 1);
-      i++;
+			shorts.add(i);
+			shorts.remove(i - 1);
+			i++;
 
-    } while (i < 99);
+		} while (i < 99);
 
-    if (true) {
+		if (true) {
 
-      System.err.println("Hi");
-    }
+			System.err.println("Hi");
+		}
 
-    if (true) {
+		if (true) {
 
-      System.err.println("Hi");
+			System.err.println("Hi");
 
-    } else {
+		} else {
 
-      System.err.println("Hi");
-    }
+			System.err.println("Hi");
+		}
 
-    if (true) {
+		if (true) {
 
-      System.err.println("Hi");
+			System.err.println("Hi");
 
-    } else if (true) {
+		} else if (true) {
 
-      System.err.println("Hi");
+			System.err.println("Hi");
 
-    } else {
+		} else {
 
-      System.err.println("Hi");
-    }
+			System.err.println("Hi");
+		}
 
-    try {
+		try {
 
-      throw new Exception();
+			throw new Exception();
 
-    } catch (Exception e) {
+		} catch (Exception e) {
 
-      System.err.println("Hi");
-    }
+			System.err.println("Hi");
+		}
 
-    try {
+		try {
 
-      throw new Exception();
+			throw new Exception();
 
-    } finally {
+		} finally {
 
-      System.err.println("Hi");
-    }
+			System.err.println("Hi");
+		}
 
-    try {
+		try {
 
-      throw new Exception();
+			throw new Exception();
 
-    } catch (Exception e) {
+		} catch (Exception e) {
 
-      System.err.println("Hi");
+			System.err.println("Hi");
 
-    } finally {
+		} finally {
 
-      System.err.println("Hi");
-    }
+			System.err.println("Hi");
+		}
 
-    try {
+		try {
 
-      throw new Exception();
+			throw new Exception();
 
-    } catch (Exception e) {
+		} catch (Exception e) {
 
-      System.err.println("Hi");
+			System.err.println("Hi");
 
-    } catch (Exception e) {
+		} catch (Exception e) {
 
-      System.err.println("Hi");
+			System.err.println("Hi");
 
-    } finally {
+		} finally {
 
-      System.err.println("Hi");
-    }
+			System.err.println("Hi");
+		}
 
-    try (Lock l = lock.lock()) {}
+		try (Lock l = lock.lock()) {}
 
-    try (Lock l = lock.lock()) {
-    } finally {
-    }
+		try (Lock l = lock.lock()) {
+		} finally {
+		}
 
-    for (; ; ) {}
+		for (; ; ) {}
 
-    while (true) {}
+		while (true) {}
 
-    do {} while (true);
+		do {} while (true);
 
-    if (true) {}
+		if (true) {}
 
-    if (true) {
-    } else if (true) {
-    }
+		if (true) {
+		} else if (true) {
+		}
 
-    if (true) {
-    } else if (true) {
-    } else if (true) {
-    }
+		if (true) {
+		} else if (true) {
+		} else if (true) {
+		}
 
-    if (true) {
-    } else if (true) {
-    } else {
-    }
+		if (true) {
+		} else if (true) {
+		} else {
+		}
 
-    if (true) {
-    } else if (true) {
-    } else if (true) {
-    } else {
-    }
+		if (true) {
+		} else if (true) {
+		} else if (true) {
+		} else {
+		}
 
-    try {
-    } catch (Exception e) {
-    } catch (Exception e) {
-    } finally {
-    }
+		try {
+		} catch (Exception e) {
+		} catch (Exception e) {
+		} finally {
+		}
 
-    try {
-    } catch (Exception e) {
-    } finally {
-    }
+		try {
+		} catch (Exception e) {
+		} finally {
+		}
 
-    try {
-    } catch (Exception e) {
-    } catch (Exception e) {
-    }
+		try {
+		} catch (Exception e) {
+		} catch (Exception e) {
+		}
 
-    try {
-    } catch (Exception e) {
-    }
-  }
+		try {
+		} catch (Exception e) {
+		}
+	}
 }
